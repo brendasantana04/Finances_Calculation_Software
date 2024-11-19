@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- EditText para ID -->
+    <EditText
+        android:id="@+id/edtIdWishlist"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:hint="@string/id_prod"
+        android:importantForContentCapture="no"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <!-- EditText para Descrição -->
+    <EditText
+        android:id="@+id/edtDescricaoWishlist"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:hint="Descrição"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edtIdWishlist"
+        android:layout_marginTop="8dp"/>
+
+    <!-- EditText para Valor -->
+    <EditText
+        android:id="@+id/edtValorWishlist"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:hint="Valor"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edtDescricaoWishlist"
+        android:layout_marginTop="8dp"/>
+
+    <!-- EditText para Prioridade -->
+    <EditText
+        android:id="@+id/edtPrioridadeWishlist"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:hint="Prioridade"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edtValorWishlist"
+        android:layout_marginTop="8dp"/>
+
+    <!-- Botões -->
+    <Button
+        android:id="@+id/btnCadastrarWishlist"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Cadastrar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edtPrioridadeWishlist"
+        android:layout_marginTop="16dp"/>
+
+    <Button
+        android:id="@+id/btnAtualizarWishlist"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Atualizar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnCadastrarWishlist"
+        android:layout_marginTop="8dp"/>
+
+    <Button
+        android:id="@+id/btnDeletarWishlist"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Deletar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnAtualizarWishlist"
+        android:layout_marginTop="8dp"/>
+
+    <Button
+        android:id="@+id/btnProcurarWishlist"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Procurar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnDeletarWishlist"
+        android:layout_marginTop="8dp"/>
+
+    <Button
+        android:id="@+id/btnListarWishlist"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Listar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnProcurarWishlist"
+        android:layout_marginTop="8dp"/>
+
+    <!-- TextView para mostrar os resultados (ID único para wishlist) -->
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/btnListarWishlist"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <TextView
+            android:id="@+id/txtResultadosWishlist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nenhum resultado encontrado"
+        android:padding="8dp"
+        android:background="@android:color/white"
+        android:textColor="@android:color/black"
+        android:scrollbars="vertical"
+        android:focusable="true"
+        android:focusableInTouchMode="true" />
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
