@@ -1,10 +1,15 @@
 package com.example.financescalculationsoftware.controller;
 
+import com.example.financescalculationsoftware.model.Wishlist;
+import com.example.financescalculationsoftware.persistence.WishlistDao;
+
 import java.sql.SQLException;
 import java.util.List;
 
-import com.example.financescalculationsoftware.model.Wishlist;
-import com.example.financescalculationsoftware.persistence.WishlistDao;
+/*
+ *@author:<Brenda>
+ *@ra:<1110482313042>
+ */
 
 public class WishlistController implements IRegistroTransacao<Wishlist> {
 

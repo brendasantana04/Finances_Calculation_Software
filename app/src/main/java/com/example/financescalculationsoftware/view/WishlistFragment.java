@@ -19,6 +19,11 @@ import com.example.financescalculationsoftware.persistence.WishlistDao;
 
 import java.util.List;
 
+/*
+ *@author:<Brenda>
+ *@ra:<1110482313042>
+ */
+
 public class WishlistFragment extends Fragment {
 
     private EditText edtIdWishlist, edtDescricaoWishlist, edtValorWishlist, edtPrioridadeWishlist;
@@ -88,10 +93,10 @@ public class WishlistFragment extends Fragment {
             wishlistController.inserir(wishlist);
             limparCampos();
             listarWishlist();
-            Toast.makeText(getContext(), "Wishlist cadastrada com sucesso!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), "produto da wishlist foi encontrado", Toast.LENGTH_SHORT).show();
         } catch (Exception e) {
             e.printStackTrace();
-            Toast.makeText(getContext(), "Erro ao cadastrar Wishlist!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), "erro: ", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -112,10 +117,10 @@ public class WishlistFragment extends Fragment {
             wishlistController.atualizar(wishlist);
             limparCampos();
             listarWishlist();
-            Toast.makeText(getContext(), "Wishlist atualizada com sucesso!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), "produto da wishlist foi atualizado", Toast.LENGTH_SHORT).show();
         } catch (Exception e) {
             e.printStackTrace();
-            Toast.makeText(getContext(), "Erro ao atualizar Wishlist!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), "erro: ", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -128,10 +133,10 @@ public class WishlistFragment extends Fragment {
             wishlistController.deletar(wishlist);
             limparCampos();
             listarWishlist();
-            Toast.makeText(getContext(), "Wishlist deletada com sucesso!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), "produto da wishlist foi deletado", Toast.LENGTH_SHORT).show();
         } catch (Exception e) {
             e.printStackTrace();
-            Toast.makeText(getContext(), "Erro ao deletar Wishlist!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), "erro: ", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -145,11 +150,11 @@ public class WishlistFragment extends Fragment {
                 edtValorWishlist.setText(String.valueOf(wishlist.getValor()));
                 edtPrioridadeWishlist.setText(wishlist.getPrioridade());
             } else {
-                Toast.makeText(getContext(), "Wishlist não encontrado!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "produto da wishlist não existe", Toast.LENGTH_SHORT).show();
             }
         } catch (Exception e) {
             e.printStackTrace();
-            Toast.makeText(getContext(), "Erro ao procurar Wishlist!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), "erro: ", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -163,7 +168,7 @@ public class WishlistFragment extends Fragment {
             txtResultadosWishlist.setText(sb.toString());
         } catch (Exception e) {
             e.printStackTrace();
-            Toast.makeText(getContext(), "Erro ao listar Wishlists!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), "erro: ", Toast.LENGTH_SHORT).show();
         }
     }
 

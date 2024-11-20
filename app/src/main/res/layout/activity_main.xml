@@ -19,17 +19,32 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
+    <ImageView
+        android:id="@+id/image_view"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/logo"
+        android:visibility="visible"
+        android:contentDescription="Imagem"
+        app:layout_constraintBottom_toTopOf="@id/text_view_footer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias="0.5"
+    />
+
     <TextView
         android:id="@+id/text_view_footer"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:background="#00AAAAAA"
         android:padding="16dp"
         android:text="Brenda Santana Santos - 1110482313042"
         android:textAlignment="center"
         android:textColor="@android:color/black"
-        android:background="@android:color/darker_gray"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

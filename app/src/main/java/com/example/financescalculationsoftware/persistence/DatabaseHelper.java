@@ -5,6 +5,11 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+/*
+ *@author:<Brenda>
+ *@ra:<1110482313042>
+ */
+
 public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String DATABASE = "TransacoesApp.DB";
     private static final int DATABASE_VERSION = 1;

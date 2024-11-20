@@ -3,6 +3,8 @@ package com.example.financescalculationsoftware.view;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -13,6 +15,11 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
 
 import com.example.financescalculationsoftware.R;
+
+/*
+ *@author:<Brenda>
+ *@ra:<1110482313042>
+ */
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        // Ajusta o layout para o modo imersivo
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             v.setPadding(insets.getInsets(WindowInsetsCompat.Type.systemBars()).left,
                     insets.getInsets(WindowInsetsCompat.Type.systemBars()).top,
@@ -34,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        // Verifica o tipo do fragmento a ser exibido
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
             String tipo = bundle.getString("tipo");
@@ -44,13 +49,11 @@ public class MainActivity extends AppCompatActivity {
                 fragment = new WishlistFragment();
             }
 
-            // Exibe o fragmento inicial
             if (fragment != null) {
                 replaceFragment(fragment);
             }
         }
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -63,12 +66,10 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id == R.id.menu_despesas) {
-            // Navega para o fragmento de despesas
             fragment = new DespesaFragment();
             replaceFragment(fragment);
             return true;
         } else if (id == R.id.menu_lista_desejos) {
-            // Navega para o fragmento de wishlist
             fragment = new WishlistFragment();
             replaceFragment(fragment);
             return true;
@@ -78,21 +79,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void replaceFragment(Fragment fragment) {
+        ImageView imageViewLogo = findViewById(R.id.image_view);
+        imageViewLogo.setVisibility(View.GONE);
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.fragment_container, fragment)
                 .commit();
     }
-//    Código para esconder a label do nome do app quando vc entrar no fragment
-//    private void replaceFragment(Fragment fragment) {
-//        FragmentManager fm = getSupportFragmentManager();
-//        FragmentTransaction ft = fm.beginTransaction();
-//
-//        if (labelAppName != null) {
-//            labelAppName.setVisibility(View.GONE);
-//        }
-//
-//        ft.replace(R.id.fragment_container, fragment);
-//        ft.commit();
-//    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        ImageView imageViewLogo = findViewById(R.id.image_view);
+        imageViewLogo.setVisibility(View.VISIBLE);
+    }
 }

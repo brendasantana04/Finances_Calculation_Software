@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:padding="16dp">
 
-    <!-- EditText para ID -->
     <EditText
         android:id="@+id/edtIdWishlist"
         android:layout_width="0dp"
@@ -19,7 +18,6 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="16dp"/>
 
-    <!-- EditText para Descrição -->
     <EditText
         android:id="@+id/edtDescricaoWishlist"
         android:layout_width="0dp"
@@ -31,7 +29,6 @@
         app:layout_constraintTop_toBottomOf="@id/edtIdWishlist"
         android:layout_marginTop="8dp"/>
 
-    <!-- EditText para Valor -->
     <EditText
         android:id="@+id/edtValorWishlist"
         android:layout_width="0dp"
@@ -43,7 +40,6 @@
         app:layout_constraintTop_toBottomOf="@id/edtDescricaoWishlist"
         android:layout_marginTop="8dp"/>
 
-    <!-- EditText para Prioridade -->
     <EditText
         android:id="@+id/edtPrioridadeWishlist"
         android:layout_width="0dp"
@@ -55,7 +51,6 @@
         app:layout_constraintTop_toBottomOf="@id/edtValorWishlist"
         android:layout_marginTop="8dp"/>
 
-    <!-- Botões -->
     <Button
         android:id="@+id/btnCadastrarWishlist"
         android:layout_width="0dp"
@@ -106,7 +101,6 @@
         app:layout_constraintTop_toBottomOf="@id/btnProcurarWishlist"
         android:layout_marginTop="8dp"/>
 
-    <!-- TextView para mostrar os resultados (ID único para wishlist) -->
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -119,7 +113,7 @@
             android:id="@+id/txtResultadosWishlist"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Nenhum resultado encontrado"
+        android:text=" "
         android:padding="8dp"
         android:background="@android:color/white"
         android:textColor="@android:color/black"

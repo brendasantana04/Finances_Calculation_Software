@@ -6,10 +6,15 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.example.financescalculationsoftware.model.Despesa;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import com.example.financescalculationsoftware.model.Despesa;
+/*
+ *@author:<Brenda>
+ *@ra:<1110482313042>
+ */
 
 public class DespesaDao implements ICRUDDao<Despesa> {
 

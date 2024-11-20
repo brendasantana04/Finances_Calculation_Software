@@ -21,6 +21,11 @@ import com.example.financescalculationsoftware.persistence.DespesaDao;
 import java.sql.SQLException;
 import java.util.List;
 
+/*
+ *@author:<Brenda>
+ *@ra:<1110482313042>
+ */
+
 public class DespesaFragment extends Fragment {
 
     private EditText edtDescricao, edtValor, edtCategoria, edtId;
@@ -69,10 +74,10 @@ public class DespesaFragment extends Fragment {
             despesa.setCategoria(categoria);
 
             despesaController.inserir(despesa);
-            Toast.makeText(getContext(), "Despesa cadastrada com sucesso!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), "Nova despesa cadastrada", Toast.LENGTH_SHORT).show();
             limparCampos();
         } catch (Exception e) {
-            Toast.makeText(getContext(), "Erro ao cadastrar despesa: " + e.getMessage(), Toast.LENGTH_LONG).show();
+            Toast.makeText(getContext(), "erro: " + e.getMessage(), Toast.LENGTH_LONG).show();
         }
     }
 
@@ -81,7 +86,7 @@ public class DespesaFragment extends Fragment {
             int id = Integer.parseInt(edtId.getText().toString());
             Despesa despesa = despesaController.procurarUm(id);
             if (despesa == null) {
-                Toast.makeText(getContext(), "Despesa não encontrada!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "não foi encontrada essa despesa", Toast.LENGTH_SHORT).show();
                 return;
             }
 
@@ -90,10 +95,10 @@ public class DespesaFragment extends Fragment {
             despesa.setCategoria(edtCategoria.getText().toString());
 
             despesaController.atualizar(despesa);
-            Toast.makeText(getContext(), "Despesa atualizada com sucesso!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), "despesa foi atualizada", Toast.LENGTH_SHORT).show();
             limparCampos();
         } catch (Exception e) {
-            Toast.makeText(getContext(), "Erro ao atualizar despesa: " + e.getMessage(), Toast.LENGTH_LONG).show();
+            Toast.makeText(getContext(), "erro: " + e.getMessage(), Toast.LENGTH_LONG).show();
         }
     }
 
@@ -102,15 +107,15 @@ public class DespesaFragment extends Fragment {
             int id = Integer.parseInt(edtId.getText().toString());
             Despesa despesa = despesaController.procurarUm(id);
             if (despesa == null) {
-                Toast.makeText(getContext(), "Despesa não encontrada!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "não foi encontrada essa despesa", Toast.LENGTH_SHORT).show();
                 return;
             }
 
             despesaController.deletar(despesa);
-            Toast.makeText(getContext(), "Despesa deletada com sucesso!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), "essa despesa foi deletada com sucesso", Toast.LENGTH_SHORT).show();
             limparCampos();
         } catch (Exception e) {
-            Toast.makeText(getContext(), "Erro ao deletar despesa: " + e.getMessage(), Toast.LENGTH_LONG).show();
+            Toast.makeText(getContext(), "erro: " + e.getMessage(), Toast.LENGTH_LONG).show();
         }
     }
 
@@ -119,12 +124,12 @@ public class DespesaFragment extends Fragment {
             int id = Integer.parseInt(edtId.getText().toString());
             Despesa despesa = despesaController.procurarUm(id);
             if (despesa == null) {
-                txtResultados.setText("Despesa não encontrada!");
+                txtResultados.setText("essa despesa não existe");
             } else {
                 txtResultados.setText(despesa.toString());
             }
         } catch (Exception e) {
-            Toast.makeText(getContext(), "Erro ao procurar despesa: " + e.getMessage(), Toast.LENGTH_LONG).show();
+            Toast.makeText(getContext(), "erro: " + e.getMessage(), Toast.LENGTH_LONG).show();
         }
     }
 
@@ -137,7 +142,7 @@ public class DespesaFragment extends Fragment {
             }
             txtResultados.setText(resultado.toString());
         } catch (SQLException e) {
-            Toast.makeText(getContext(), "Erro ao listar despesas: " + e.getMessage(), Toast.LENGTH_LONG).show();
+            Toast.makeText(getContext(), "erro: " + e.getMessage(), Toast.LENGTH_LONG).show();
         }
     }
 

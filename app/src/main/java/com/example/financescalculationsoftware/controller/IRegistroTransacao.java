@@ -3,6 +3,11 @@ package com.example.financescalculationsoftware.controller;
 import java.sql.SQLException;
 import java.util.List;
 
+/*
+ *@author:<Brenda>
+ *@ra:<1110482313042>
+ */
+
 public interface IRegistroTransacao<T> {
 
     void inserir(T t) throws SQLException;

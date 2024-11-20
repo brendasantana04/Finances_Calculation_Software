@@ -1,5 +1,10 @@
 package com.example.financescalculationsoftware.model;
 
+/*
+ *@author:<Brenda>
+ *@ra:<1110482313042>
+ */
+
 public class Wishlist extends Transacao {
     private String prioridade;
 
